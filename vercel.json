@@ -7,9 +7,7 @@
       }
     ],
     "routes": [
-        { "src": "/(.*)", "dest": "/index.js" },
-      { "handle": "filesystem"},
-      {"src": "/api/sentiment", "dest":"/index.js"}
+      { "src": "/(.*)", "dest": "/index.js" }
     ]
   }
   
