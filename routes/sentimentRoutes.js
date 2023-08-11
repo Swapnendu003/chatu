@@ -1,4 +1,3 @@
-// router/sentimentRouter.js
 const express = require('express');
 const sentimentController = require('../controller/sentimentController');
 
