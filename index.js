@@ -18,4 +18,5 @@ app.all('/', (req, res) => {
   res.send('Hello World');
 });
 
-module.exports.handler = serverless(app);
+// Export the serverless function
+module.exports = serverless(app);
