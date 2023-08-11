@@ -2,7 +2,6 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const sentimentRouter = require('./routes/sentimentRoutes');
-const serverless = require('serverless-http');
 
 const app = express();
 app.use(bodyParser.json());
@@ -18,5 +17,4 @@ app.all('/', (req, res) => {
   res.send('Hello World');
 });
 
-// Export the serverless function
-module.exports = serverless(app);
+module.exports = app;  // Export the Express app
