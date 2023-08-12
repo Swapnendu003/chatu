@@ -8,6 +8,7 @@
     ],
     "routes": [
       { "src": "/api/sentiment/analyze", "dest": "/index.js" },
+      { "src": "/api/twilio/voicecall", "dest": "/index.js" },
       { "src": "/(.*)", "dest": "/index.js" }
     ]
   }
