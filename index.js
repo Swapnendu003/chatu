@@ -1,4 +1,4 @@
-const express = require('express');
+/*const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const sentimentRouter = require('./routes/sentimentRoutes');
@@ -17,4 +17,93 @@ app.all('/', (req, res) => {
   res.send('Hello World');
 });
 
+module.exports = app;  // Export the Express app*/
+
+
+
+
+/*const express = require('express');
+const bodyParser = require('body-parser');
+const cors = require('cors');
+const sentimentRouter = require('./routes/sentimentRoutes');
+const path = require('path');
+
+const app = express();
+app.use(bodyParser.json());
+
+// Enable CORS
+app.use(cors());
+
+//app.use(express.static(path.join(__dirname, 'public')));
+
+// Use the sentiment router
+app.use('/api/sentiment', sentimentRouter);
+
+app.all('/', (req, res) => {
+  console.log("received request");
+  res.send('Hello World');
+});
+
+const port = 3000;
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
+});*/
+
+
+
+
+/*const express = require('express');
+const bodyParser = require('body-parser');
+const cors = require('cors');
+const sentimentRouter = require('./routes/sentimentRoutes');
+const path = require('path');
+
+const app = express();
+app.use(bodyParser.json());
+
+// Enable CORS
+app.use(cors());
+
+// Use the sentiment router
+app.use('/api/sentiment', sentimentRouter);
+
+app.all('/', (req, res) => {
+  console.log('Received request');
+  res.send('Hello World');
+});
+
+const port = 3000;
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
+});*/
+
+
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+const express = require('express');
+const bodyParser = require('body-parser');
+const cors = require('cors');
+const sentimentRouter = require('./routes/sentimentRoutes');
+//const path = require('path');
+
+const app = express();
+app.use(bodyParser.json());
+
+// Enable CORS
+app.use(cors());
+
+// Use the sentiment router
+app.use('/api/sentiment', sentimentRouter);
+
+app.all('/', (req, res) => {
+  console.log("received request");
+  res.send('Hello World');
+});
+
+const port = 3000;
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
+});
 module.exports = app;  // Export the Express app
