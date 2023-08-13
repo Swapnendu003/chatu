@@ -89,6 +89,7 @@ const dotenv = require('dotenv');
 dotenv.config();
 const sentimentRouter = require('./routes/sentimentRoutes');
 const callRoutes = require('./routes/twilioRoutes');
+const modelRoutes = require('./routes/modelRoutes');
 //const path = require('path');
 
 const app = express();
@@ -100,6 +101,7 @@ app.use(cors());
 // Use the sentiment router
 app.use('/api/sentiment', sentimentRouter);
 app.use('/api/calls', callRoutes);
+app.use('/api/models', modelRoutes);
 
 app.all('/', (req, res) => {
   console.log("received request");
