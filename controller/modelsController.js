@@ -15,7 +15,15 @@ function loadModels(req, res) {
         // Read the model files
         const models = {};
         for (const [modelName, modelPath] of Object.entries(modelPaths)) {
-            models[modelName] = fs.readFileSync(path.join(__dirname, '..', modelPath), 'utf8');
+            const filePath = path.join(__dirname, '..', modelPath);
+            console.log(filePath);
+            if (fs.existsSync(filePath)) {
+                models[modelName] = fs.readFileSync(filePath, 'utf8');
+            } else {
+                console.error(`Model file not found: ${filePath}`);
+                res.status(500).json({ message: `Model file not found: ${modelName}` });
+                return;
+            }
         }
 
         // Send the models to the frontend
