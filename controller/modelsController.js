@@ -17,6 +17,9 @@ function loadModels(req, res) {
         for (const [modelName, modelPath] of Object.entries(modelPaths)) {
             const filePath = path.join(__dirname, '..', modelPath);
             console.log('Checking file:', filePath);
+            const folderPath = path.join(__dirname, '..', 'models');
+    const filesInFolder = fs.readdirSync(folderPath);
+    console.log('Files in "models" folder:', filesInFolder);
             if (fs.existsSync(filePath)) {
                 models[modelName] = fs.readFileSync(filePath, 'utf8');
             } else {
