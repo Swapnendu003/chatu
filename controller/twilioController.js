@@ -1,9 +1,9 @@
 const twilio = require('twilio');
 
 
-const accountSid = 'AC7f2235eda5eb8b5b2a3465191a9e9124';
-const authToken = 'b10c629e491ca9641f0b48586c5e53d5';
-const twilioPhoneNumber = '+18159892403';
+const accountSid = 'ACd3dcd809f5b36f9387538b4a83beb511';
+const authToken = 'c069b54bd198b06ab7285ea2c37931bc';
+const twilioPhoneNumber = '+18156459007';
 
 const client = twilio(accountSid, authToken);
 
@@ -12,7 +12,7 @@ exports.makeCall = (req, res) => {
 
   client.calls
     .create({
-      url: 'https://chatu-git-master-swapnendu003.vercel.app/api/twilio/voicecall', // A TwiML URL for call instructions
+      url: 'https://chatu-git-master-swapnendu003.vercel.app/api/twilio/voicecall', 
       to: phoneNumber,
       from: twilioPhoneNumber,
     })

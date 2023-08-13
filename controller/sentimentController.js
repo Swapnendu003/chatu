@@ -89,7 +89,7 @@ const fetch = require('isomorphic-fetch');
 
 const transformersApiUrl = 'https://api-inference.huggingface.co/models/distilbert-base-uncased-finetuned-sst-2-english';
 
-// Analyze sentiment of a list of answers
+
 const analyzeSentiments = async (answers) => {
   try {
     const sentiments = [];
@@ -99,7 +99,7 @@ const analyzeSentiments = async (answers) => {
       const response = await fetch(transformersApiUrl, {
         method: 'POST',
         headers: {
-          'Authorization': 'Bearer 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', // Replace with your Hugging Face API key
+          'Authorization': 'Bearer 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',
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({ inputs: answer }),
