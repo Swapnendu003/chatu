@@ -39,9 +39,9 @@ const router = express.Router();
 // Analyze sentiment of a list of answers
 router.post('/analyze', async (req, res) => {
   try {
-    const { responses, from } = req.body;
+    const { responses } = req.body;
     //const translatedResponse = await translateText(response, from, 'en');
-    const translatedResponse = await Promise.all(responses.map(response => translateText(response, 'en', from)));
+    const translatedResponse = await Promise.all(responses.map(response => translateText(response, 'en', 'bn')));
     //console.log (translatedResponse);
     const sentiments = await sentimentController.analyzeSentiments(translatedResponse);
     res.json({ sentiments });
