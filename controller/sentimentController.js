@@ -99,7 +99,7 @@ const analyzeSentiments = async (answers) => {
       const response = await fetch(transformersApiUrl, {
         method: 'POST',
         headers: {
-          'Authorization': 'Bearer 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',
+          'Authorization': 'Bearer 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',
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({ inputs: answer }),
