@@ -88,7 +88,7 @@ const router = express.Router();
 
 router.post('/analyze', async (req, res) => {
   try {
-    let { response } = req.body;
+    let { response, from } = req.body;
 
     // Convert a non-array response into an array with a single element
     if (!Array.isArray(response)) {
@@ -96,7 +96,7 @@ router.post('/analyze', async (req, res) => {
     }
 
     // Assuming you want to translate to English ('en') from Bengali ('bn')
-    const translatedResponses = await Promise.all(response.map(text => translateText(text, 'en', 'bn')));
+    const translatedResponses = await Promise.all(response.map(text => translateText(text, 'en', from)));
 
     // Ensure that the translated responses are non-empty strings
     if (translatedResponses.some(translatedResponse => !translatedResponse || typeof translatedResponse !== 'string')) {
