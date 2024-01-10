@@ -91,6 +91,8 @@ const sentimentRouter = require('./routes/sentimentRoutes');
 const callRoutes = require('./routes/twilioRoutes');
 const translateRoutes = require ('./routes/translateQuestionsRoutes');
 const generateRoutes = require ('./routes/geminiRoutes');
+const chatRoutes = require('./routes/chatRoutes');
+
 
 
 
@@ -106,6 +108,7 @@ app.use('/api/sentiment', sentimentRouter);
 app.use('/api/calls', callRoutes);
 app.use ('/translate', translateRoutes);
 app.use ('/generate', generateRoutes);
+app.use ('/chat', chatRoutes);
 
 
 app.all('/', (req, res) => {
