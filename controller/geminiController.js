@@ -4,14 +4,17 @@ const {
     HarmCategory,
     HarmBlockThreshold,
   } = require("@google/generative-ai");
-  
+  require('dotenv').config();
   const MODEL_NAME = "gemini-pro";
-  const API_KEY = "AIzaSyCBksI1GjNWwEyjB5xCGrruywE8NKezYtg";
+  const API_KEY = process.env.GEMINI_API_KEY;
   
   const genAI = new GoogleGenerativeAI(API_KEY);
   const model = genAI.getGenerativeModel({ model: MODEL_NAME });
   
-  const generateGeminiResponse = async (inputText) => {
+  const generateGeminiResponse = async (inputText, origin) => {
+    if (origin !== 'https://hack-for-health.vercel.app/') {
+    throw new Error('Unauthorized access');
+  }
     const generationConfig = {
       temperature: 0.9,
       topK: 1,
